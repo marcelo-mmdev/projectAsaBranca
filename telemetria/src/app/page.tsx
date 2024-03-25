@@ -1,6 +1,5 @@
 "use client";
 
-import CardPDB from "@/components/cardPDB";
 import {
   DesktopOutlined,
   FileOutlined,
@@ -13,6 +12,7 @@ import { useState } from "react";
 import { AudioOutlined } from "@ant-design/icons";
 import { Input, Space } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
+import ModuleCardPDB from "@/components/modules/moduleCard";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -80,7 +80,7 @@ export default function Home() {
               justifyContent: "space-between",
             }}
           >
-            <div>Grupo Asa Branca</div>
+            <div>GAB</div>
             <div>
               {/* Melhorar e componentizar o Search */}
               <Search
@@ -101,7 +101,7 @@ export default function Home() {
             }}
           >
             {/* Cards da telemetria com as estação. */}
-            <CardPDB />
+            <ModuleCardPDB />
             {/* ----------------------------------- */}
           </div>
         </Content>
