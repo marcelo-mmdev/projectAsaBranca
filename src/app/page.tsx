@@ -1,28 +1,16 @@
 "use client";
 
 import { Layout, theme } from "antd";
-import { AudioOutlined } from "@ant-design/icons";
-import { Input } from "antd";
-import type { SearchProps } from "antd/es/input/Search";
-import ModuleCardPDB from "@/components/modules/moduleCard";
 import { CollapComponent } from "@/components/collapComponent";
+import { SearchComponent } from '@/components/searchComponent';
+import ModulePDB from '@/components/modules/modulePDB';
+import ModuleCard from '@/components/modules/moduleCard';
 
 export default function Home() {
+  const { Header, Content, Footer } = Layout;
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-  const onSearch: SearchProps["onSearch"] = (value, _e, info) =>
-    console.log(info?.source, value);
-  const { Search } = Input;
-  const { Header, Content, Footer, Sider } = Layout;
-  const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: "#1677ff",
-      }}
-    />
-  );
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -40,13 +28,7 @@ export default function Home() {
             <div>GAB</div>
             <div>
               {/* Melhorar e componentizar o Search */}
-              <Search
-                placeholder="Pesquisar estação"
-                enterButton="Search"
-                size="small"
-                suffix={suffix}
-                onSearch={onSearch}
-              />
+              <SearchComponent />
             </div>
           </div>
           <div
@@ -58,7 +40,8 @@ export default function Home() {
             }}
           >
             {/* Cards da telemetria com as estação. */}
-            <ModuleCardPDB />
+            {/* <ModulePDB /> */}
+            <ModuleCard />
             {/* ----------------------------------- */}
           </div>
         </Content>

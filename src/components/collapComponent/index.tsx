@@ -28,9 +28,9 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem("Home", "1", <DesktopOutlined />),
-  getItem("Telemetria", "2", <PieChartOutlined />),
-  getItem("Usuario", "sub1", <UserOutlined />, [getItem("Marcelo", "3")]),
+  getItem("Telemetria", "1", <DesktopOutlined />),
+  getItem("Alarmes", "2", <PieChartOutlined />),
+  getItem("PDBs", "Contatos", <UserOutlined />, [getItem("Contatos", "3")]),
   getItem("Planilha", "4", <FileOutlined />),
 ];
 

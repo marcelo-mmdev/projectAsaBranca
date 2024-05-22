@@ -4,7 +4,7 @@ import { Button, Modal, Progress } from "antd";
 import { Key, useEffect, useState } from "react";
 import Papa from "papaparse";
 
-export default function ModuleCardPDB(props: any) {
+export default function ModuleCard(props: any) {
   const [modal2Open, setModal2Open] = useState(false);
   const url =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyMSpohCQ8qcELCIBY5Wl6yKCuF1K4D1MbwUduQ4G-reanv6EQQfTEJHYNiMO-kUMCJs7w3ObnW41t/pub?gid=0&single=true&output=csv";
@@ -15,7 +15,7 @@ export default function ModuleCardPDB(props: any) {
       .then((response) => response.text())
       .then((data) => {
         const parsedData = Papa.parse(data, { header: true });
-        // console.log(parsedData);
+        console.log(parsedData);
         setData(parsedData.data);
       })
       .catch((err) => console.log(err));
