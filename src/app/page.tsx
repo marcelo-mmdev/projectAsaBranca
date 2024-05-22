@@ -8,11 +8,12 @@ import {
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AudioOutlined } from "@ant-design/icons";
 import { Input, Space } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import ModuleCardPDB from "@/components/modules/moduleCard";
+
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -34,7 +35,7 @@ const items: MenuItem[] = [
   getItem("Home", "1", <DesktopOutlined />),
   getItem("Telemetria", "2", <PieChartOutlined />),
   getItem("Usuario", "sub1", <UserOutlined />, [getItem("Marcelo", "3")]),
-  getItem("Downloads", "4", <FileOutlined />),
+  getItem("Planilha", "4", <FileOutlined />),
 ];
 
 export default function Home() {
