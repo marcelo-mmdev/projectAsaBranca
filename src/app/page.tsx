@@ -2,9 +2,9 @@
 
 import { Layout, theme } from "antd";
 import { CollapComponent } from "@/components/collapComponent";
-import { SearchComponent } from '@/components/searchComponent';
-import ModulePDB from '@/components/modules/modulePDB';
-import ModuleCard from '@/components/modules/moduleCard';
+import { SearchComponent } from "@/components/searchComponent";
+import ModulePDB from "@/components/modules/modulePDB";
+import ModuleCard from "@/components/modules/moduleCard";
 
 export default function Home() {
   const { Header, Content, Footer } = Layout;
@@ -40,8 +40,8 @@ export default function Home() {
             }}
           >
             {/* Cards da telemetria com as estação. */}
-            <ModulePDB />
-            {/* <ModuleCard /> */}
+            {/* <ModulePDB /> */}
+            <ModuleCard />
             {/* ----------------------------------- */}
           </div>
         </Content>
