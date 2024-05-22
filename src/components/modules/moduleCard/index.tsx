@@ -60,7 +60,6 @@ export default function ModuleCardPDB(props: any) {
                 percent={55}
                 trailColor="#FFF"
                 success={{ percent: 90 }}
-                size={[80, 50]}
               />
             </div>
 

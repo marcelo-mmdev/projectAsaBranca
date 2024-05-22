@@ -1,45 +1,13 @@
 "use client";
 
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Layout, Menu, theme } from "antd";
-import { useEffect, useState } from "react";
+import { Layout, theme } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
-import { Input, Space } from "antd";
+import { Input } from "antd";
 import type { SearchProps } from "antd/es/input/Search";
 import ModuleCardPDB from "@/components/modules/moduleCard";
-
-
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[]
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  } as MenuItem;
-}
-
-const items: MenuItem[] = [
-  getItem("Home", "1", <DesktopOutlined />),
-  getItem("Telemetria", "2", <PieChartOutlined />),
-  getItem("Usuario", "sub1", <UserOutlined />, [getItem("Marcelo", "3")]),
-  getItem("Planilha", "4", <FileOutlined />),
-];
+import { CollapComponent } from "@/components/collapComponent";
 
 export default function Home() {
-  const [collapsed, setCollapsed] = useState(true);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -58,19 +26,7 @@ export default function Home() {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <Sider
-        collapsible
-        collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
-      >
-        <div className="demo-logo-vertical" />
-        <Menu
-          theme="dark"
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={items}
-        />
-      </Sider>
+      <CollapComponent />
       <Layout>
         <Header style={{ padding: 0, background: colorBgContainer }} />
         <Content style={{ margin: "0 16px" }}>
