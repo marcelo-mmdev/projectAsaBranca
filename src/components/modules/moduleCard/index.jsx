@@ -4,26 +4,26 @@ import { Button, Modal, Progress } from "antd";
 import { Key, useEffect, useState } from "react";
 import Papa from "papaparse";
 
-export default function ModuleCard(props: any) {
+export default function ModuleCard() {
   const [modal2Open, setModal2Open] = useState(false);
   const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyMSpohCQ8qcELCIBY5Wl6yKCuF1K4D1MbwUduQ4G-reanv6EQQfTEJHYNiMO-kUMCJs7w3ObnW41t/pub?gid=0&single=true&output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyMSpohCQ8qcELCIBY5Wl6yKCuF1K4D1MbwUduQ4G-reanv6EQQfTEJHYNiMO-kUMCJs7w3ObnW41t/pub?gid=0&single=true&output=csv"
 
   const [data, setData] = useState([]);
   useEffect(() => {
     const response = fetch(url)
       .then((response) => response.text())
       .then((data) => {
-        const parsedData = Papa.parse(data, { header: true });
-        console.log(parsedData);
-        setData(parsedData.data);
+        const parsedData = Papa.parse(data, { header: true })
+        console.log(parsedData)
+        setData(parsedData.data)
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <>
-      {data.map((status: any, index: Key | null | undefined) => (
+      {data.map((status, index) => (
         <div
           key={index}
           style={{

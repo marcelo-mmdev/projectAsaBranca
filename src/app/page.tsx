@@ -40,8 +40,8 @@ export default function Home() {
             }}
           >
             {/* Cards da telemetria com as estação. */}
-            {/* <ModulePDB /> */}
-            <ModuleCard />
+            <ModulePDB />
+            {/* <ModuleCard /> */}
             {/* ----------------------------------- */}
           </div>
         </Content>

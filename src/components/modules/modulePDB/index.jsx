@@ -7,23 +7,24 @@ import Papa from "papaparse";
 export default function ModulePDB() {
   const [modal2Open, setModal2Open] = useState(false);
   const url =
-    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyMSpohCQ8qcELCIBY5Wl6yKCuF1K4D1MbwUduQ4G-reanv6EQQfTEJHYNiMO-kUMCJs7w3ObnW41t/pub?gid=0&single=true&output=csv";
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQyMSpohCQ8qcELCIBY5Wl6yKCuF1K4D1MbwUduQ4G-reanv6EQQfTEJHYNiMO-kUMCJs7w3ObnW41t/pub?gid=0&single=true&output=csv"
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     const response = fetch(url)
       .then((response) => response.text())
       .then((data) => {
         const parsedData = Papa.parse(data, { header: true });
-        console.log(parsedData);
-        setData(parsedData.data);
+        console.log("HHHHHHHHHH", parsedData)
+        setData(parsedData.data)
+        console.log("PPPPPPPPPPPPPPPPPPPPPPP", parsedData.data);
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
     <>
-      {data.map((status: any, index: Key | null | undefined) => (
+      {data.map((status, index) => (
         <Button
           key={index}
           type="primary"
@@ -34,10 +35,7 @@ export default function ModulePDB() {
             margin: "8px",
           }}
         >
-          <div
-          >
-            {status.Estação}
-          </div>
+          <div>{status.Estação}</div>
         </Button>
       ))}
       <Modal
