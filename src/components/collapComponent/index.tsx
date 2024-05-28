@@ -5,6 +5,7 @@ import {
   FileOutlined,
   PieChartOutlined,
   UserOutlined,
+  DatabaseOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Layout, Menu } from "antd";
@@ -31,7 +32,8 @@ const items: MenuItem[] = [
   getItem("Telemetria", "1", <DesktopOutlined />),
   getItem("Alarmes", "2", <PieChartOutlined />),
   getItem("PDBs", "Contatos", <UserOutlined />, [getItem("Contatos", "3")]),
-  getItem("Planilha", "4", <FileOutlined />),
+  getItem("Planilha", "4", <DatabaseOutlined />),
+  getItem("Relatórios", "5", <FileOutlined />),
 ];
 
 export const CollapComponent = () => {
